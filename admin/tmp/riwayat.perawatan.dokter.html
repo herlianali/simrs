@@ -1,0 +1,324 @@
+<style media="screen">
+  table td,
+  table th {
+    padding: 5px;
+  }
+</style>
+<style>
+  .profile-card .profile-header {
+    background-color: #EEE;
+    padding: 42px 0;
+  }
+  .profile-card .profile-body .image-area {
+    text-align: center;
+    margin-top: -64px;
+  }
+  .profile-card .profile-body .image-area img {
+    border: 2px solid #DDD;
+    padding: 2px;
+    margin: 2px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+  }
+  .profile-card .profile-body .content-area {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+  }
+  .profile-card .profile-body .content-area p {
+    margin-bottom: 0;
+  }
+  .profile-card .profile-body .content-area p:last-child {
+    font-weight: 600;
+    color: #ad1455;
+    margin-top: 5px;
+  }
+  .profile-card .profile-footer {
+    padding: 15px;
+  }
+  .profile-card .profile-footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .profile-card .profile-footer ul li {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+  }
+  .profile-card .profile-footer ul li:last-child {
+    border-bottom: none;
+    margin-bottom: 15px;
+  }
+  .profile-card .profile-footer ul li span:first-child {
+    font-weight: bold;
+  }
+  .profile-card .profile-footer ul li span:last-child {
+    float: right;
+  }
+  .card-about-me .body ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .card-about-me .body ul li {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+  }
+  .card-about-me .body ul li:last-child {
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .card-about-me .body ul li .title {
+    font-weight: bold;
+    color: #666;
+  }
+  .card-about-me .body ul li .title i {
+    margin-right: 2px;
+    position: relative;
+    top: 0px;
+  }
+  .card-about-me .body ul li .content {
+    margin-top: 10px;
+    color: #999;
+    font-size: 13px;
+  }
+  .panel-post {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+  }
+  .panel-post .panel-heading {
+    background-color: #fff;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+  }
+  .panel-post .panel-heading .media {
+    margin-bottom: 0;
+  }
+  .panel-post .panel-heading .media a img {
+    width: 42px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+  }
+  .panel-post .panel-heading .media .media-body {
+    padding-top: 5px;
+  }
+  .panel-post .panel-heading .media .media-body h4 {
+    font-size: 14px;
+  }
+  .panel-post .panel-heading .media .media-body h4 a {
+    color: #666;
+  }
+  .panel-post .panel-body {
+    padding: 0;
+  }
+  .panel-post .panel-body .post .post-heading {
+    padding: 12px 15px;
+  }
+  .panel-post .panel-body .post .post-heading p {
+    margin-bottom: 0;
+  }
+  .panel-post .panel-body .post .post-content {
+    padding: 12px 15px;
+  }
+  .panel-post .panel-body .post .post-content .assessment-title {
+    font-size: 14px;
+  }
+  .panel-post .panel-body .post .post-content ul {
+    padding-left: 10px;
+    margin-left: 15px;
+  }
+  .panel-post .panel-body .post .post-content ul li {
+    list-style: bullet;
+  }
+  .panel-post .panel-body .post .post-content p {
+    margin-bottom: 0;
+  }
+  .panel-post .panel-footer {
+    background-color: #fff;
+    border: none;
+  }
+  .panel-post .panel-footer ul {
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    padding-bottom: 5px;
+    border-bottom: #eee solid 1px;
+    list-style: none;
+  }
+  .panel-post .panel-footer ul li {
+    display: inline-block;
+    margin-right: 12px;
+  }
+  .panel-post .panel-footer ul li:last-child {
+    float: right;
+    margin-right: 0;
+  }
+  .panel-post .panel-footer ul li a {
+    color: #777;
+    text-decoration: none;
+  }
+  .panel-post .panel-footer ul li a i {
+    font-size: 16px;
+    position: relative;
+    top: 4px;
+    margin-right: 2px;
+  }
+  .panel-post .panel-footer ul li a span {
+    font-size: 13px;
+  }
+  .panel-post .panel-footer .form-group {
+    margin-bottom: 5px;
+    margin-top: 20px;
+  }
+  .separator {
+      display: flex;
+      align-items: center;
+      text-align: center;
+  }
+  .separator::before, .separator::after {
+      content: '';
+      flex: 1;
+      border-bottom: 2px solid #ddd;
+  }
+  .separator::before {
+      margin-right: .25em;
+  }
+  .separator::after {
+      margin-left: .25em;
+  }
+</style>
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span> Tutup</button>
+    <h4 class="modal-title">Riwayat Perawatan</h4>
+</div>
+<div class="modal-body" style="margin-left:0;margin-right:0;padding-left:0;padding-right:0;">
+  <div class="clearfix">
+    <div class="col-md-12 col-lg-3">
+        <div class="card profile-card">
+            <div class="profile-header">&nbsp;</div>
+            <div class="profile-body">
+                <div class="image-area">
+                    <div>
+                      <img src="http://localhost/khanza-lite-master/plugins/pasien/img/L.png" width="96" height="96" class="img-thumbnail" id="photoPreview" style="cursor:pointer;color:red;" onclick="$('input[name=photo]').click()" />
+                      <input type="file" name="photo" class="form-control hidden" id="photo" />
+                    </div>
+                    <div id="uploadstatus"></div>
+                    <h4>AZHAR</h4>
+                </div>
+                <div class="content-area">
+                    <p>1174020504980003</p>
+                    <p><span id="no_rkm_medis">000002</span></p>
+                </div>
+            </div>
+            <div class="profile-footer visible-lg">
+                <ul>
+                    <li>
+                        <span>Rawat Jalan</span>
+                        <span>0</span>
+                    </li>
+                    <li>
+                        <span>Rawat Inap</span>
+                        <span>0</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card card-about-me visible-lg">
+            <div class="header">
+                <h4>Detil Pribadi</h4>
+            </div>
+            <div class="body">
+                <ul>
+                    <li>
+                        <div class="title">
+                            <i class="fa fa-file-text"></i>
+                            Alamat
+                        </div>
+                        <div class="content">
+                            Jl. Perintis Kemerdekaan                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <i class="fa fa-file-text"></i>
+                            Jenis Kelamin
+                        </div>
+                        <div class="content">
+                            L                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <i class="fa fa-file-text"></i>
+                            Tempat / Tanggal Lahir
+                        </div>
+                        <div class="content">
+                            - / 1998-04-05                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-9">
+          <div class="panel-default panel-post">
+                      <div class="text-center">Tidak ditemukan riwayat perawatan</div>
+                    </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" data-dismiss="modal">Tutup</button>
+</div>
+<script>
+// Avatar
+var reader  = new FileReader();
+reader.addEventListener("load", function() {
+  $("#photoPreview").attr('src', reader.result);
+}, false);
+$("input[name=photo]").change(function() {
+  reader.readAsDataURL(this.files[0]);
+});
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(document).on('change','#photo',function(){
+      var property = document.getElementById('photo').files[0];
+      var image_name = property.name;
+      var image_extension = image_name.split('.').pop().toLowerCase();
+
+      if(jQuery.inArray(image_extension,['gif','jpg','jpeg','png']) == -1){
+        alert("Invalid image file");
+      }
+
+      var form_data = new FormData();
+      form_data.append("file",property);
+      form_data.append("no_rkm_medis",$('#no_rkm_medis').text());
+      $.ajax({
+        url:'http://localhost/khanza-lite-master/admin/pasien/savephoto?t=859faf04cb29',
+        method:'POST',
+        data:form_data,
+        contentType:false,
+        cache:false,
+        processData:false,
+        beforeSend:function(){
+          $('#photoPreview').hide();
+          $('#uploadstatus').html('<img src="http://localhost/khanza-lite-master/assets/img/loading.gif" height="100" width="100" />');
+        },
+        success:function(data){
+          console.log(data);
+          $('#uploadstatus').hide();
+          $('#photoPreview').show();
+          $('#photoPreview').html(data);
+        }
+      });
+    });
+  });
+</script>
